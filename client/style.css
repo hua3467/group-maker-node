@@ -1,0 +1,252 @@
+body,
+input,
+textarea {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body,h1,h2,h3,h4,h5,h6,p {
+    margin: 0;
+}
+
+nav {
+    background-color: #006633;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav h1 {
+    color: white;
+}
+
+main {
+    width: 100%;
+    margin: 0;
+}
+
+.container {
+    width: 90%;
+    min-width: 360px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#introVideo {
+    width: 920px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.group-card {
+    width: calc(33% - 36px);
+    display: inline-block;
+    border: 2px solid rgb(16, 207, 127);
+    margin: 8px;
+    border-radius: 4px;
+    padding: 8px;
+    vertical-align: text-top;
+}
+
+.card-title {
+    margin-bottom: 12px;
+}
+
+.group-size {
+    color: #006633;
+}
+
+.card-description {
+    font-size: 0.8em;
+}
+
+.group-status {
+    margin: 16px 0;
+}
+
+.form-container {
+    background-color: rgba(255, 255, 255, 0.7);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    backdrop-filter: blur(12px);
+}
+
+#form,
+#groupEditContaner,
+#eventEditContaner {
+    min-width: 360px;
+    width: 80%;
+    max-width: 720px;
+}
+
+#groupEditContaner textarea,
+#eventEditContaner textarea {
+    height: 200px;
+    border: 2px solid black;
+}
+
+.group-edit {
+    width: 100%;
+}
+.group-edit .user-input{
+    width: 100%;
+}
+
+#eventEditContaner .user-input {
+    width: 100%;
+}
+
+.btn {
+    padding: 8px 16px;
+    background-color: rgb(0, 120, 92);
+    border: 2px solid rgb(0, 120, 92);
+    color: white;
+    border-radius: 4px;
+}
+
+.btn-cancel {
+    background-color: white;
+    color: rgb(0, 120, 92);
+    border: 2px solid rgb(0, 120, 92);
+    margin-right: 16px;
+}
+
+.btn-edit-group {
+    margin: 8px 0;
+    position: absolute;
+    right: 10px;
+    top: -12px;
+}
+
+.user-input {
+    padding: 4px;
+    border-radius: 4px;
+    margin: 8px 0;
+    width: 300px;
+    display: block;
+    font-size: 1em;
+}
+
+.input-section {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+.hide {
+    display: none;
+}
+
+
+.member-card {
+    margin: 4px;
+    border: 1px solid rgb(0, 181, 97);
+    border-radius: 4px;
+    padding: 4px;
+    width: 320px;
+    height: 90px;
+    display: inline-block;
+    position: relative;
+    vertical-align: text-top;
+}
+
+.member-card p {
+    font-size: 0.9em;
+}
+
+.group-section {
+    margin: 30px 0;
+    border-top: 1px solid rgb(216, 216, 216);
+}
+
+.group-info {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.group-title {
+    margin-right: 20px;
+}
+
+
+
+.btn-delete {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: white;
+    color: rgb(218, 34, 2);;
+    border: none;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.btn-delete:hover {
+    color: white;
+    background-color: rgb(218, 34, 2);
+    cursor: pointer;
+}
+
+
+.image-uploader {
+    vertical-align: top;
+}
+
+.image-uploader #preview,
+.image-uploader #upload_widget {
+    display: block;
+}
+
+#upload_widget {
+    height: 40px;
+    width: 160px;
+    line-height: 1em;
+}
+
+@media (max-width: 920px) {
+    #introVideo {
+        width: 100%;
+    }
+    .group-card {
+        width: calc(50% - 36px)
+    }
+}
+
+@media (max-width: 720px) {
+
+    
+
+    .group-card {
+        width: calc(100% - 32px)
+    }
+
+   .btn {
+        height: 44px;
+        width: 100px;
+        font-size: 1.2em;
+        padding: 0;
+    }
+    .user-input {
+        height: 44px;
+        font-size: 1.2em;
+    }
+}
+
+@media print {
+    .no-print {
+        display: none !important;
+    }
+
+    .member-card {
+        height: auto;
+        width: calc(50% - 20px)
+    }
+}
