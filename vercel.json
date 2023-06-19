@@ -1,6 +1,6 @@
 {
     "version": 2,
-    "name": "group-maker-server",
+    "name": "group-maker-node",
     "builds": [
       {
         "src": "index.js",
