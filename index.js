@@ -11,7 +11,7 @@ dotenv.config();
 const app = express()
 const port = 3000;
 
-app.use( express.static( __dirname + '/client' ));
+app.use( express.static( __dirname + '/public' ));
 
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, set, update, onValue, child, get, remove } from "firebase/database";
@@ -38,19 +38,19 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/client/index.html');
+  res.sendFile(__dirname + '/public/index.html');
 });
 
 app.get('/home', (req, res) => {
-  res.sendFile(__dirname + '/client/home.html');
+  res.sendFile(__dirname + '/public/home.html');
 });
 
 app.get('/edit-event', (req, res) => {
-  res.sendFile(__dirname + '/client/edit-event.html');
+  res.sendFile(__dirname + '/public/edit-event.html');
 });
 
 app.get('/manage-group', (req, res) => {
-  res.sendFile(__dirname + '/client/manage-group.html');
+  res.sendFile(__dirname + '/public/manage-group.html');
 });
 
 
