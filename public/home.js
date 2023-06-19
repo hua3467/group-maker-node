@@ -1,6 +1,8 @@
 
 const dataUrl = `${baseUrl}/all-data`;
 
+console.log(dataUrl);
+
 new JDom({
     type: "button",
     content: "Create a New Event",
