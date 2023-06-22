@@ -21,21 +21,11 @@ fetch(dataUrl)
     .then((rawData) => {
         data = JSON.parse(rawData)
 
-        clearElements("#videContainer")
         clearElements("#app")
 
         document.querySelector("#description").innerHTML = data.description
         document.querySelector("#eventTitle").innerHTML = data.page_title
-        document.querySelector("#docURL").href = data.doc
 
-        new JDom({
-            type: "video",
-            attr: {
-                src: data.video_url,
-                controls: true,
-                id: "introVideo",
-            },
-        }).render("#videContainer")
 
         const groupData = data["group-data"]
         const capacity = data.capacity
@@ -132,7 +122,6 @@ function card(data, capacity, isFull) {
                         state = {
                             name: "",
                             email: "",
-                            school: "",
                             groupID: "",
                             uid: Date.now(),
                         }
@@ -152,9 +141,7 @@ function signUpForm(data) {
     return new JDom({
         type: "form",
         attr: {
-            className: "sign-up-form",
-            method: "post",
-            action: signUpUrl
+            className: "sign-up-form"
         },
         children: [
             {
@@ -174,7 +161,7 @@ function signUpForm(data) {
                 children: [
                     input("Full Name: ", "input", "name", setState),
                     input("Email: ", "input", "email", setState),
-                    input("School: ", "input", "school", setState),
+                    input("Note: ", "textarea", "note", setState)
                 ],
             },
             {
@@ -197,6 +184,19 @@ function signUpForm(data) {
                 content: "Submit",
                 attr: {
                     className: "btn btn-signup",
+                },
+                events: {
+                    click: (e) => {
+                        e.preventDefault();
+                        if (state.name.trim().length > 0) {
+                            setData(signUpUrl, state, (result) => {
+                                console.log(result);
+                            });
+                        } else {
+                            alert("Please enter a name.");
+                        }
+                        
+                    }
                 }
             },
         ],
