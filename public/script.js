@@ -1,13 +1,9 @@
 let state = {
     name: "",
     email: "",
-    school: "",
     groupID: "",
     uid: Date.now(),
 }
-
-const imagePlaceHolder =
-    "https://sodaa360.com/wp-content/uploads/image_hosting/14/2023/04/pexels-photo-1103970.jpeg"
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -53,7 +49,7 @@ fetch(dataUrl)
  * @param {*} data single group data
  */
 function card(data, capacity, isFull) {
-    const style = isFull
+    const joinBtnStyle = isFull
         ? {
             display: "none",
         }
@@ -70,11 +66,14 @@ function card(data, capacity, isFull) {
     let image = null
     if (data.image) {
         image = {
-            type: "img",
+            type: "div",
             attr: {
-                src: data.image,
                 style: {
                     width: "100%",
+                    height: "200px",
+                    backgroundImage: `url(${data.image})`,
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat"
                 },
             },
         }
@@ -114,7 +113,7 @@ function card(data, capacity, isFull) {
                 type: "button",
                 content: "Join",
                 attr: {
-                    style: style,
+                    style: joinBtnStyle,
                     className: "btn btn-join",
                 },
                 events: {
